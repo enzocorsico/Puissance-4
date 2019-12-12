@@ -1,8 +1,9 @@
 from turtle import*
-colonne=[-150,-100,-50,0,50,100,150]
-ligne=[-175,-125,-75,-25,25,75]
-l=0
-c=0
+colonnex=[-150,-100,-50,0,50,100,150]
+ligney=[-175,-125,-75,-25,25,75]
+colonne=0
+ligne=0
+pion=False
 colonne1=[0,0,0,0,0,0]
 colonne2=[0,0,0,0,0,0]
 colonne3=[0,0,0,0,0,0]
@@ -10,6 +11,7 @@ colonne4=[0,0,0,0,0,0]
 colonne5=[0,0,0,0,0,0]
 colonne6=[0,0,0,0,0,0]
 colonne7=[0,0,0,0,0,0]
+n=0
 
 def mise_en_place():
     getscreen()
@@ -43,19 +45,37 @@ def Grille_vide():
         up()
     left(90)
 
+
+
 def Coup_possible():
-    global l,c
-    l=int(input("Ligne: "))
-    c=int(input("Colonne: "))
-    while l<1 or l>6:
-        l=int(input("Veuillez ressaisir une ligne valide: "))
-    while c<1 or c>7:
-        c=int(input("Veuillez ressaisir une colonne valide: "))
-    if 
+    global colonne,n,pion,ligne
+    colonne=int(input("Colonne: "))
+    while colonne<1 or colonne>7:
+        colonne=int(input("Veuillez ressaisir une colonne valide: "))
+    
+    if colonne==1:
+        if colonne1[0]+colonne1[1]+colonne1[2]+colonne1[3]+colonne1[4]+colonne1[5]==0:
+            colonne1[0]=1
+            ligne=1
+            pion=True
+            return
+        
+        for d in range(len(colonne1)):
+            if colonne1[d]!=0:
+                pion=False
+            else:
+                colonne1[d]=1
+                ligne=d+1
+                pion=True
+                return
+            
+
+
+
 
 def cercle():
     up()
-    goto(colonne[c-1],ligne[l-1])
+    goto(colonnex[colonne-1],ligney[ligne-1])
     down()
     begin_fill()
     circle(25,360)
@@ -63,8 +83,11 @@ def cercle():
     up()
     
 
+
 mise_en_place()
 Grille_vide()
-Coup_possible()
-if Coup_possible==True:
-    cercle()
+
+for w in range(5):
+    Coup_possible()
+    if pion==True:
+        cercle()
