@@ -1,6 +1,6 @@
 from turtle import*
-colonne=[]
-ligne[]
+colonne=[-175,-125,-75,-25,25,75,125]
+ligne=[-175,-125,-75,-25,25,75]
 
 def Grille_vide():
     grille_x=-175
