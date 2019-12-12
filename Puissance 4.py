@@ -1,5 +1,5 @@
 from turtle import*
-colonne=[-175,-125,-75,-25,25,75,125]
+colonne=[-150,-100,-50,0,50,100,150]
 ligne=[-175,-125,-75,-25,25,75]
 
 def Grille_vide():
@@ -23,13 +23,12 @@ def Grille_vide():
         forward(300)
         grille_x=grille_x+50
         up()
+    left(90)
 
-def Affiche_grille():
-    global colonne ligne
-    vide=False
-    joueur1=False
-    joueur2=False
-    
+def cercle():
+    up()
+    goto(colonne[x],ligne[y])
+    if 
         
 
 Grille_vide()
