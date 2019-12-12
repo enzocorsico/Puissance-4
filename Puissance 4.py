@@ -1,12 +1,13 @@
 from turtle import*
-
+colonne=[]
+ligne[]
 
 def Grille_vide():
     grille_x=-175
     grille_y=-175
     up()
     color("black")
-    for a in range(8):
+    for a in range(7):
         up()
         goto(grille_x,grille_y)
         down()
@@ -19,10 +20,16 @@ def Grille_vide():
         up()
         goto(grille_x,grille_y)
         down()
-        forward(350)
+        forward(300)
         grille_x=grille_x+50
         up()
-        
+
+def Affiche_grille():
+    global colonne ligne
+    vide=False
+    joueur1=False
+    joueur2=False
+    
         
 
 Grille_vide()
