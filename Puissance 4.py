@@ -227,7 +227,6 @@ def Gagne():
         return True
 
 
-z=9
 mise_en_place()
 Grille_vide()
 print("C'est au tour du joueur",joueur[n],"de jouer !")
