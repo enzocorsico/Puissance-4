@@ -177,20 +177,20 @@ def Gagne():
     #Verticale
     if colonne1[0]*colonne1[1]*colonne1[2]*colonne1[3]==1 or colonne1[1]*colonne1[2]*colonne1[3]*colonne1[4]==1 or colonne1[2]*colonne1[3]*colonne1[4]*colonne1[5]==1:
         print("Le joueur 1 a gagné !")
-        return
+        return True
     elif colonne1[0]*colonne1[1]*colonne1[2]*colonne1[3]==16 or colonne1[1]*colonne1[2]*colonne1[3]*colonne1[4]==16 or colonne1[2]*colonne1[3]*colonne1[4]*colonne1[5]==16:
         print("Le joueur 2 a gagné !")
-        return
+        return True
 
 
-z=7
+z=9
 mise_en_place()
 Grille_vide()
 print("C'est au tour du joueur",joueur[n],"de jouer !")
-for w in range(z):
+while Gagne==False:
     Coup_possible()
     if pion==True:
         tour()
         cercle()
         print("C'est au tour du joueur",joueur[n],"de jouer !")
-    Gagne()
+        Gagne()
