@@ -4,7 +4,7 @@ colonnex=[-150,-100,-50,0,50,100,150]
 ligney=[-175,-125,-75,-25,25,75]
 chiffre=-155
 chiffre2=["1","2","3","4","5","6","7"]
-colonne=0
+colonne=""
 ligne=0
 joueur=[0,1,2] #Le 0 ne correspond à aucun joueur
 couleur=["red","blue"]
@@ -66,14 +66,14 @@ def Coup_possible():
     if p==1:
         sys.exit(0)
     elif p==0:
-        colonne=int(input("Colonne: "))
-        while colonne<1 or colonne>7:
-            colonne=int(input("Veuillez ressaisir une colonne valide: "))
+        colonne=str(input("Colonne: "))
+        while ord(colonne)<49 or ord(colonne)>55:
+            colonne=str(input("Veuillez ressaisir une colonne valide: "))
     
-        if colonne==1:
+        if int(colonne)==1:
             if colonne1[0]!=0 and colonne1[1]!=0 and colonne1[2]!=0 and colonne1[3]!=0 and colonne1[4]!=0 and colonne1[5]!=0:
                 pion=False
-                while colonne<1 or colonne>7 or colonne==1:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==49:
                     colonne=int(input("Veuillez ressaisir une colonne valide: "))
             for d in range(len(colonne1)):
                 if colonne1[d]!=0:
@@ -84,10 +84,10 @@ def Coup_possible():
                     pion=True
                     return
     
-        if colonne==2:
+        if int(colonne)==2:
             if colonne2[0]!=0 and colonne2[1]!=0 and colonne2[2]!=0 and colonne2[3]!=0 and colonne2[4]!=0 and colonne2[5]!=0:
                 pion=False
-                while colonne<1 or colonne>7 or colonne==2:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==50:
                     colonne=int(input("Veuillez ressaisir une colonne valide: "))
             for d in range(len(colonne2)):
                 if colonne2[d]!=0:
@@ -98,10 +98,10 @@ def Coup_possible():
                     pion=True
                     return
     
-        if colonne==3:
+        if int(colonne)==3:
             if colonne3[0]!=0 and colonne3[1]!=0 and colonne3[2]!=0 and colonne3[3]!=0 and colonne3[4]!=0 and colonne3[5]!=0:
                 pion=False
-                while colonne<1 or colonne>7 or colonne==3:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==51:
                     colonne=int(input("Veuillez ressaisir une colonne valide: "))
             for d in range(len(colonne3)):
                 if colonne3[d]!=0:
@@ -112,10 +112,10 @@ def Coup_possible():
                     pion=True
                     return
             
-        if colonne==4:
+        if int(colonne)==4:
             if colonne4[0]!=0 and colonne4[1]!=0 and colonne4[2]!=0 and colonne4[3]!=0 and colonne4[4]!=0 and colonne4[5]!=0:
                 pion=False
-                while colonne<1 or colonne>7 or colonne==4:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==52:
                     colonne=int(input("Veuillez ressaisir une colonne valide: "))
             for d in range(len(colonne4)):
                 if colonne4[d]!=0:
@@ -126,10 +126,10 @@ def Coup_possible():
                     pion=True
                     return
     
-        if colonne==5:
+        if int(colonne)==5:
             if colonne5[0]!=0 and colonne5[1]!=0 and colonne5[2]!=0 and colonne5[3]!=0 and colonne5[4]!=0 and colonne5[5]!=0:
                 pion=False
-                while colonne<1 or colonne>7 or colonne==5:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==53:
                     colonne=int(input("Veuillez ressaisir une colonne valide: "))
             for d in range(len(colonne5)):
                 if colonne5[d]!=0:
@@ -140,10 +140,10 @@ def Coup_possible():
                     pion=True
                     return
     
-        if colonne==6:
+        if int(colonne)==6:
             if colonne6[0]!=0 and colonne6[1]!=0 and colonne6[2]!=0 and colonne6[3]!=0 and colonne6[4]!=0 and colonne6[5]!=0:
                 pion=False
-                while colonne<1 or colonne>7 or colonne==6:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==54:
                     colonne=int(input("Veuillez ressaisir une colonne valide: "))
             for d in range(len(colonne6)):
                 if colonne6[d]!=0:
@@ -154,10 +154,10 @@ def Coup_possible():
                     pion=True
                     return
             
-        if colonne==7:
+        if int(colonne)==7:
             if colonne7[0]!=0 and colonne7[1]!=0 and colonne7[2]!=0 and colonne7[3]!=0 and colonne7[4]!=0 and colonne7[5]!=0:
                 pion=False
-                while colonne<1 or colonne>7 or colonne==7:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==55:
                     colonne=int(input("Veuillez ressaisir une colonne valide: "))
             for d in range(len(colonne7)):
                 if colonne7[d]!=0:
@@ -173,7 +173,7 @@ def Coup_possible():
 def cercle():
     up()
     color(couleur[n-1])
-    goto(colonnex[colonne-1],ligney[ligne-1])
+    goto(colonnex[int(colonne)-1],ligney[ligne-1])
     down()
     begin_fill()
     circle(25,360)
