@@ -3,7 +3,7 @@ colonnex=[-150,-100,-50,0,50,100,150]
 ligney=[-175,-125,-75,-25,25,75]
 colonne=0
 ligne=0
-joueur=1
+joueur=[0,1,2]
 pion=False
 colonne1=[0,0,0,0,0,0]
 colonne2=[0,0,0,0,0,0]
@@ -12,12 +12,13 @@ colonne4=[0,0,0,0,0,0]
 colonne5=[0,0,0,0,0,0]
 colonne6=[0,0,0,0,0,0]
 colonne7=[0,0,0,0,0,0]
-n=0
+n=1
 
 def mise_en_place():
     getscreen()
     speed(10)
     #ht()
+    joueur[0]
 
 
 
@@ -55,11 +56,6 @@ def Coup_possible():
         colonne=int(input("Veuillez ressaisir une colonne valide: "))
     
     if colonne==1:
-        if colonne1[0]+colonne1[1]+colonne1[2]+colonne1[3]+colonne1[4]+colonne1[5]==0:
-            colonne1[0]=1
-            ligne=1
-            pion=True
-            return
         if colonne1[0]!=0 and colonne1[1]!=0 and colonne1[2]!=0 and colonne1[3]!=0 and colonne1[4]!=0 and colonne1[5]!=0:
             pion=False
             while colonne<1 or colonne>7 or colonne==1:
@@ -68,17 +64,12 @@ def Coup_possible():
             if colonne1[d]!=0:
                 pion=False
             else:
-                colonne1[d]=1
+                colonne1[d]=joueur
                 ligne=d+1
                 pion=True
                 return
     
     if colonne==2:
-        if colonne2[0]+colonne2[1]+colonne2[2]+colonne2[3]+colonne2[4]+colonne2[5]==0:
-            colonne2[0]=1
-            ligne=1
-            pion=True
-            return
         if colonne2[0]!=0 and colonne2[1]!=0 and colonne2[2]!=0 and colonne2[3]!=0 and colonne2[4]!=0 and colonne2[5]!=0:
             pion=False
             while colonne<1 or colonne>7 or colonne==2:
@@ -87,17 +78,12 @@ def Coup_possible():
             if colonne2[d]!=0:
                 pion=False
             else:
-                colonne2[d]=1
+                colonne2[d]=joueur
                 ligne=d+1
                 pion=True
                 return
     
     if colonne==3:
-        if colonne3[0]+colonne3[1]+colonne3[2]+colonne3[3]+colonne3[4]+colonne3[5]==0:
-            colonne3[0]=1
-            ligne=1
-            pion=True
-            return
         if colonne3[0]!=0 and colonne3[1]!=0 and colonne3[2]!=0 and colonne3[3]!=0 and colonne3[4]!=0 and colonne3[5]!=0:
             pion=False
             while colonne<1 or colonne>7 or colonne==3:
@@ -106,17 +92,12 @@ def Coup_possible():
             if colonne3[d]!=0:
                 pion=False
             else:
-                colonne3[d]=1
+                colonne3[d]=joueur
                 ligne=d+1
                 pion=True
                 return
             
     if colonne==4:
-        if colonne4[0]+colonne4[1]+colonne4[2]+colonne4[3]+colonne4[4]+colonne4[5]==0:
-            colonne4[0]=1
-            ligne=1
-            pion=True
-            return
         if colonne4[0]!=0 and colonne4[1]!=0 and colonne4[2]!=0 and colonne4[3]!=0 and colonne4[4]!=0 and colonne4[5]!=0:
             pion=False
             while colonne<1 or colonne>7 or colonne==4:
@@ -125,17 +106,12 @@ def Coup_possible():
             if colonne4[d]!=0:
                 pion=False
             else:
-                colonne4[d]=1
+                colonne4[d]=joueur
                 ligne=d+1
                 pion=True
                 return
     
     if colonne==5:
-        if colonne5[0]+colonne5[1]+colonne5[2]+colonne5[3]+colonne5[4]+colonne5[5]==0:
-            colonne5[0]=1
-            ligne=1
-            pion=True
-            return
         if colonne5[0]!=0 and colonne5[1]!=0 and colonne5[2]!=0 and colonne5[3]!=0 and colonne5[4]!=0 and colonne5[5]!=0:
             pion=False
             while colonne<1 or colonne>7 or colonne==5:
@@ -144,17 +120,12 @@ def Coup_possible():
             if colonne5[d]!=0:
                 pion=False
             else:
-                colonne5[d]=1
+                colonne5[d]=joueur
                 ligne=d+1
                 pion=True
                 return
     
     if colonne==6:
-        if colonne6[0]+colonne6[1]+colonne6[2]+colonne6[3]+colonne6[4]+colonne6[5]==0:
-            colonne6[0]=1
-            ligne=1
-            pion=True
-            return
         if colonne6[0]!=0 and colonne6[1]!=0 and colonne6[2]!=0 and colonne6[3]!=0 and colonne6[4]!=0 and colonne6[5]!=0:
             pion=False
             while colonne<1 or colonne>7 or colonne==6:
@@ -163,17 +134,12 @@ def Coup_possible():
             if colonne6[d]!=0:
                 pion=False
             else:
-                colonne6[d]=1
+                colonne6[d]=joueur
                 ligne=d+1
                 pion=True
                 return
             
     if colonne==7:
-        if colonne7[0]+colonne7[1]+colonne7[2]+colonne7[3]+colonne7[4]+colonne7[5]==0:
-            colonne7[0]=1
-            ligne=1
-            pion=True
-            return
         if colonne7[0]!=0 and colonne7[1]!=0 and colonne7[2]!=0 and colonne7[3]!=0 and colonne7[4]!=0 and colonne7[5]!=0:
             pion=False
             while colonne<1 or colonne>7 or colonne==7:
@@ -182,7 +148,7 @@ def Coup_possible():
             if colonne7[d]!=0:
                 pion=False
             else:
-                colonne7[d]=1
+                colonne7[d]=joueur
                 ligne=d+1
                 pion=True
                 return
@@ -197,14 +163,24 @@ def cercle():
     circle(25,360)
     end_fill()
     up()
-    
 
+def tour():
+    global n
+    if n==1:
+        n=2
+        return
+    if n==2:
+        n=1
+        return
 
-mise_en_place()
-Grille_vide()
 
 z=100
+mise_en_place()
+Grille_vide()
+print("C'est au tour du joueur",joueur[n],"de jouer !")
 for w in range(z):
     Coup_possible()
     if pion==True:
+        tour()
         cercle()
+        print("C'est au tour du joueur",joueur[n],"de jouer !")        
