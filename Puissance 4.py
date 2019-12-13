@@ -1,5 +1,4 @@
 from turtle import*
-<<<<<<< HEAD
 colonnex=[-150,-100,-50,0,50,100,150]
 ligney=[-175,-125,-75,-25,25,75]
 colonne=0
@@ -24,8 +23,6 @@ def mise_en_place():
 
 
 
-=======
->>>>>>> parent of 4dcf6cc... Update Puissance 4.py
 
 
 def Grille_vide():
@@ -33,7 +30,7 @@ def Grille_vide():
     grille_y=-175
     up()
     color("black")
-    for a in range(8):
+    for a in range(7):
         up()
         goto(grille_x,grille_y)
         down()
@@ -46,10 +43,9 @@ def Grille_vide():
         up()
         goto(grille_x,grille_y)
         down()
-        forward(350)
+        forward(300)
         grille_x=grille_x+50
         up()
-<<<<<<< HEAD
     left(90)
 
 
@@ -281,10 +277,6 @@ def Gagne():
         print("Le joueur 2 a gagné !")
         return True
 
-=======
-        
-        
->>>>>>> parent of 4dcf6cc... Update Puissance 4.py
 
 mise_en_place()
 Grille_vide()
