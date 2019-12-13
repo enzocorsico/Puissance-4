@@ -173,6 +173,15 @@ def tour():
         n=1
         return
 
+def Gagne():
+    #Verticale
+    if colonne1[0]*colonne1[1]*colonne1[2]*colonne1[3]==1 or colonne1[1]*colonne1[2]*colonne1[3]*colonne1[4]==1 or colonne1[2]*colonne1[3]*colonne1[4]*colonne1[5]==1:
+        print("Le joueur 1 a gagné !")
+        return
+    elif colonne1[0]*colonne1[1]*colonne1[2]*colonne1[3]==16 or colonne1[1]*colonne1[2]*colonne1[3]*colonne1[4]==16 or colonne1[2]*colonne1[3]*colonne1[4]*colonne1[5]==16:
+        print("Le joueur 2 a gagné !")
+        return
+
 
 z=100
 mise_en_place()
