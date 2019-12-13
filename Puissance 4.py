@@ -3,7 +3,8 @@ colonnex=[-150,-100,-50,0,50,100,150]
 ligney=[-175,-125,-75,-25,25,75]
 colonne=0
 ligne=0
-joueur=[0,1,2]
+joueur=[0,1,2] #Le 0 ne correspond à aucun joueur
+couleur=["yellow","red"]
 pion=False
 colonne1=[0,0,0,0,0,0]
 colonne2=[0,0,0,0,0,0]
@@ -17,7 +18,7 @@ n=1
 def mise_en_place():
     getscreen()
     speed(10)
-    #ht()
+    ht()
     joueur[0]
 
 
@@ -157,6 +158,7 @@ def Coup_possible():
 
 def cercle():
     up()
+    color(couleur[n-1])
     goto(colonnex[colonne-1],ligney[ligne-1])
     down()
     begin_fill()
@@ -181,16 +183,58 @@ def Gagne():
     elif colonne1[0]*colonne1[1]*colonne1[2]*colonne1[3]==16 or colonne1[1]*colonne1[2]*colonne1[3]*colonne1[4]==16 or colonne1[2]*colonne1[3]*colonne1[4]*colonne1[5]==16:
         print("Le joueur 2 a gagné !")
         return True
+    
+    elif colonne2[0]*colonne2[1]*colonne2[2]*colonne2[3]==1 or colonne2[1]*colonne2[2]*colonne2[3]*colonne2[4]==1 or colonne2[2]*colonne2[3]*colonne2[4]*colonne2[5]==1:
+        print("Le joueur 1 a gagné !")
+        return True
+    elif colonne2[0]*colonne2[1]*colonne2[2]*colonne2[3]==16 or colonne2[1]*colonne2[2]*colonne2[3]*colonne2[4]==16 or colonne2[2]*colonne2[3]*colonne2[4]*colonne2[5]==16:
+        print("Le joueur 2 a gagné !")
+        return True
+    
+    elif colonne3[0]*colonne3[1]*colonne3[2]*colonne3[3]==1 or colonne3[1]*colonne3[2]*colonne3[3]*colonne3[4]==1 or colonne3[2]*colonne3[3]*colonne3[4]*colonne3[5]==1:
+        print("Le joueur 1 a gagné !")
+        return True
+    elif colonne3[0]*colonne3[1]*colonne3[2]*colonne3[3]==16 or colonne3[1]*colonne3[2]*colonne3[3]*colonne3[4]==16 or colonne3[2]*colonne3[3]*colonne3[4]*colonne3[5]==16:
+        print("Le joueur 2 a gagné !")
+        return True
+    
+    elif colonne4[0]*colonne4[1]*colonne4[2]*colonne4[3]==1 or colonne4[1]*colonne4[2]*colonne4[3]*colonne4[4]==1 or colonne4[2]*colonne4[3]*colonne4[4]*colonne4[5]==1:
+        print("Le joueur 1 a gagné !")
+        return True
+    elif colonne4[0]*colonne4[1]*colonne4[2]*colonne4[3]==16 or colonne4[1]*colonne4[2]*colonne4[3]*colonne4[4]==16 or colonne4[2]*colonne4[3]*colonne4[4]*colonne4[5]==16:
+        print("Le joueur 2 a gagné !")
+        return True
+    
+    elif colonne5[0]*colonne5[1]*colonne5[2]*colonne5[3]==1 or colonne5[1]*colonne5[2]*colonne5[3]*colonne5[4]==1 or colonne5[2]*colonne5[3]*colonne5[4]*colonne5[5]==1:
+        print("Le joueur 1 a gagné !")
+        return True
+    elif colonne5[0]*colonne5[1]*colonne5[2]*colonne5[3]==16 or colonne5[1]*colonne5[2]*colonne5[3]*colonne5[4]==16 or colonne5[2]*colonne5[3]*colonne5[4]*colonne5[5]==16:
+        print("Le joueur 2 a gagné !")
+        return True
+    
+    elif colonne6[0]*colonne6[1]*colonne6[2]*colonne6[3]==1 or colonne6[1]*colonne6[2]*colonne6[3]*colonne6[4]==1 or colonne6[2]*colonne6[3]*colonne6[4]*colonne6[5]==1:
+        print("Le joueur 1 a gagné !")
+        return True
+    elif colonne6[0]*colonne6[1]*colonne6[2]*colonne6[3]==16 or colonne6[1]*colonne6[2]*colonne6[3]*colonne6[4]==16 or colonne6[2]*colonne6[3]*colonne6[4]*colonne6[5]==16:
+        print("Le joueur 2 a gagné !")
+        return True
+    
+    elif colonne7[0]*colonne7[1]*colonne7[2]*colonne7[3]==1 or colonne7[1]*colonne7[2]*colonne7[3]*colonne7[4]==1 or colonne7[2]*colonne7[3]*colonne7[4]*colonne7[5]==1:
+        print("Le joueur 1 a gagné !")
+        return True
+    elif colonne7[0]*colonne7[1]*colonne7[2]*colonne7[3]==16 or colonne7[1]*colonne7[2]*colonne7[3]*colonne7[4]==16 or colonne7[2]*colonne7[3]*colonne7[4]*colonne7[5]==16:
+        print("Le joueur 2 a gagné !")
+        return True
 
 
 z=9
 mise_en_place()
 Grille_vide()
 print("C'est au tour du joueur",joueur[n],"de jouer !")
-while Gagne==False:
+while Gagne!=True:
     Coup_possible()
     if pion==True:
         tour()
         cercle()
         print("C'est au tour du joueur",joueur[n],"de jouer !")
-        Gagne()
+    Gagne()
