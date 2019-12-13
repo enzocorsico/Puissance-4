@@ -64,7 +64,7 @@ def Coup_possible():
             if colonne1[d]!=0:
                 pion=False
             else:
-                colonne1[d]=joueur
+                colonne1[d]=joueur[n]
                 ligne=d+1
                 pion=True
                 return
@@ -78,7 +78,7 @@ def Coup_possible():
             if colonne2[d]!=0:
                 pion=False
             else:
-                colonne2[d]=joueur
+                colonne2[d]=joueur[n]
                 ligne=d+1
                 pion=True
                 return
@@ -92,7 +92,7 @@ def Coup_possible():
             if colonne3[d]!=0:
                 pion=False
             else:
-                colonne3[d]=joueur
+                colonne3[d]=joueur[n]
                 ligne=d+1
                 pion=True
                 return
@@ -106,7 +106,7 @@ def Coup_possible():
             if colonne4[d]!=0:
                 pion=False
             else:
-                colonne4[d]=joueur
+                colonne4[d]=joueur[n]
                 ligne=d+1
                 pion=True
                 return
@@ -120,7 +120,7 @@ def Coup_possible():
             if colonne5[d]!=0:
                 pion=False
             else:
-                colonne5[d]=joueur
+                colonne5[d]=joueur[n]
                 ligne=d+1
                 pion=True
                 return
@@ -134,7 +134,7 @@ def Coup_possible():
             if colonne6[d]!=0:
                 pion=False
             else:
-                colonne6[d]=joueur
+                colonne6[d]=joueur[n]
                 ligne=d+1
                 pion=True
                 return
@@ -148,7 +148,7 @@ def Coup_possible():
             if colonne7[d]!=0:
                 pion=False
             else:
-                colonne7[d]=joueur
+                colonne7[d]=joueur[n]
                 ligne=d+1
                 pion=True
                 return
@@ -183,7 +183,7 @@ def Gagne():
         return
 
 
-z=100
+z=7
 mise_en_place()
 Grille_vide()
 print("C'est au tour du joueur",joueur[n],"de jouer !")
@@ -192,4 +192,5 @@ for w in range(z):
     if pion==True:
         tour()
         cercle()
-        print("C'est au tour du joueur",joueur[n],"de jouer !")        
+        print("C'est au tour du joueur",joueur[n],"de jouer !")
+    Gagne()
