@@ -268,6 +268,14 @@ def Gagne():
     elif colonne1[5]*colonne2[5]*colonne3[5]*colonne4[5]==16 or colonne2[5]*colonne3[5]*colonne4[5]*colonne5[5]==16 or colonne3[5]*colonne4[5]*colonne5[5]*colonne6[5]==16 or colonne4[5]*colonne5[5]*colonne6[5]*colonne7[5]==16:
         print("Le joueur 2 a gagné !")
         return True
+    
+    #Diagonales Montantes
+    elif colonne1[2]*colonne2[3]*colonne3[4]*colonne4[5]==1 or colonne1[1]*colonne2[2]*colonne3[3]*colonne4[4]==1 or colonne2[2]*colonne3[3]*colonne4[4]*colonne6[5]==1 or colonne4[5]*colonne5[5]*colonne6[5]*colonne7[5]==1:
+        print("Le joueur 1 a gagné !")
+        return True
+    elif colonne1[5]*colonne2[5]*colonne3[5]*colonne4[5]==16 or colonne2[5]*colonne3[5]*colonne4[5]*colonne5[5]==16 or colonne3[5]*colonne4[5]*colonne5[5]*colonne6[5]==16 or colonne4[5]*colonne5[5]*colonne6[5]*colonne7[5]==16:
+        print("Le joueur 2 a gagné !")
+        return True
 
 
 mise_en_place()
