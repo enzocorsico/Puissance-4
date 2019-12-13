@@ -2,6 +2,8 @@ from turtle import*
 import sys
 colonnex=[-150,-100,-50,0,50,100,150]
 ligney=[-175,-125,-75,-25,25,75]
+chiffre=-155
+chiffre2=["1","2","3","4","5","6","7"]
 colonne=0
 ligne=0
 joueur=[0,1,2] #Le 0 ne correspond à aucun joueur
@@ -19,9 +21,15 @@ p=0
 gagnant=0
 
 def mise_en_place():
+    global chiffre,chiffre2
+    up()
     getscreen()
     speed(20)
     ht()
+    for j in range(7):
+        goto(chiffre,125)
+        write(chiffre2[j],font=("Arial",15,"normal"))
+        chiffre=chiffre+50
     joueur[0]
 
 
