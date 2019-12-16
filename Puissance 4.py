@@ -1,5 +1,4 @@
 from turtle import*
-import sys
 colonnex=[-150,-100,-50,0,50,100,150]
 ligney=[-175,-125,-75,-25,25,75]
 chiffre=-155
@@ -66,15 +65,19 @@ def Coup_possible():
     if p==1:
         sys.exit(0)
     elif p==0:
-        colonne=str(input("Colonne: "))
+        colonne=textinput("Colonne","Saisissez une colonne")
+        if colonne=="exit":
+            return
+        while len(colonne)<1 or len(colonne)>2:
+            colonne=textinput("Colonne","Saisissez une colonne valide")
         while ord(colonne)<49 or ord(colonne)>55:
-            colonne=str(input("Veuillez ressaisir une colonne valide: "))
+            colonne=textinput("Colonne","Saisissez une colonne valide")
     
         if int(colonne)==1:
             if colonne1[0]!=0 and colonne1[1]!=0 and colonne1[2]!=0 and colonne1[3]!=0 and colonne1[4]!=0 and colonne1[5]!=0:
                 pion=False
                 while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==49:
-                    colonne=int(input("Veuillez ressaisir une colonne valide: "))
+                    colonne=textinput("Colonne","Saisissez une colonne valide")
             for d in range(len(colonne1)):
                 if colonne1[d]!=0:
                     pion=False
@@ -88,7 +91,7 @@ def Coup_possible():
             if colonne2[0]!=0 and colonne2[1]!=0 and colonne2[2]!=0 and colonne2[3]!=0 and colonne2[4]!=0 and colonne2[5]!=0:
                 pion=False
                 while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==50:
-                    colonne=int(input("Veuillez ressaisir une colonne valide: "))
+                    colonne=textinput("Colonne","Saisissez une colonne valide")
             for d in range(len(colonne2)):
                 if colonne2[d]!=0:
                     pion=False
@@ -102,7 +105,7 @@ def Coup_possible():
             if colonne3[0]!=0 and colonne3[1]!=0 and colonne3[2]!=0 and colonne3[3]!=0 and colonne3[4]!=0 and colonne3[5]!=0:
                 pion=False
                 while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==51:
-                    colonne=int(input("Veuillez ressaisir une colonne valide: "))
+                    colonne=textinput("Colonne","Saisissez une colonne valide")
             for d in range(len(colonne3)):
                 if colonne3[d]!=0:
                     pion=False
@@ -116,7 +119,7 @@ def Coup_possible():
             if colonne4[0]!=0 and colonne4[1]!=0 and colonne4[2]!=0 and colonne4[3]!=0 and colonne4[4]!=0 and colonne4[5]!=0:
                 pion=False
                 while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==52:
-                    colonne=int(input("Veuillez ressaisir une colonne valide: "))
+                    colonne=textinput("Colonne","Saisissez une colonne valide")
             for d in range(len(colonne4)):
                 if colonne4[d]!=0:
                     pion=False
@@ -130,7 +133,7 @@ def Coup_possible():
             if colonne5[0]!=0 and colonne5[1]!=0 and colonne5[2]!=0 and colonne5[3]!=0 and colonne5[4]!=0 and colonne5[5]!=0:
                 pion=False
                 while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==53:
-                    colonne=int(input("Veuillez ressaisir une colonne valide: "))
+                    colonne=textinput("Colonne","Saisissez une colonne valide")
             for d in range(len(colonne5)):
                 if colonne5[d]!=0:
                     pion=False
@@ -144,7 +147,7 @@ def Coup_possible():
             if colonne6[0]!=0 and colonne6[1]!=0 and colonne6[2]!=0 and colonne6[3]!=0 and colonne6[4]!=0 and colonne6[5]!=0:
                 pion=False
                 while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==54:
-                    colonne=int(input("Veuillez ressaisir une colonne valide: "))
+                    colonne=textinput("Colonne","Saisissez une colonne valide")
             for d in range(len(colonne6)):
                 if colonne6[d]!=0:
                     pion=False
@@ -158,7 +161,7 @@ def Coup_possible():
             if colonne7[0]!=0 and colonne7[1]!=0 and colonne7[2]!=0 and colonne7[3]!=0 and colonne7[4]!=0 and colonne7[5]!=0:
                 pion=False
                 while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==55:
-                    colonne=int(input("Veuillez ressaisir une colonne valide: "))
+                    colonne=textinput("Colonne","Saisissez une colonne valide")
             for d in range(len(colonne7)):
                 if colonne7[d]!=0:
                     pion=False
@@ -171,6 +174,8 @@ def Coup_possible():
 
 
 def cercle():
+    if colonne=="exit":
+        return
     up()
     color(couleur[n-1])
     goto(colonnex[int(colonne)-1],ligney[ligne-1])
@@ -191,6 +196,10 @@ def tour():
 
 def partie():
     while Gagne()!=True:
+        if colonne=="exit":
+            print("")
+            print("Vous avez mis fin à la partie !")
+            return 
         print("C'est au tour du joueur",joueur[n],"de jouer !")
         Coup_possible()
         if pion==True:
