@@ -283,3 +283,4 @@ def Gagne():
 mise_en_place()
 Grille_vide()
 partie()
+exitonclick()
