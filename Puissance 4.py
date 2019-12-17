@@ -210,6 +210,7 @@ def tour():
         return
 
 def partie():
+    compteur=0
     while Gagne()!=True:
         if colonne=="exit":
             print("")
@@ -221,8 +222,11 @@ def partie():
             tour()
             cercle()
             Gagne()
+        compteur=compteur+1
     print("")
     print("La partie est terminée, c'est le joueur",gagnant,"qui gagne la partie")
+    if tour==42:
+        print("La partie est terminée")
     
 
 def Gagne():
