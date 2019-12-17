@@ -214,7 +214,8 @@ def partie():
     while Gagne()!=True:
         if colonne=="exit":
             print("")
-            print("Vous avez mis fin à la partie !")
+            goto(-140,200)
+            write("Vous avez mis fin à la partie !",font=("Arial",15,"normal"))
             return 
         print("C'est au tour du joueur",joueur[n],"de jouer !")
         Coup_possible()
@@ -224,10 +225,11 @@ def partie():
             Gagne()
         compteur=compteur+1
     print("")
-    print("La partie est terminée, c'est le joueur",gagnant,"qui gagne la partie")
+    goto(-250,200)
+    write("La partie est terminée, c'est le joueur "+str(gagnant)+" qui gagne la partie !",font=("Arial",15,"normal"))
     if tour==42:
-        print("La partie est terminée")
-    
+        goto(-100,200)
+        write("La partie est terminée",font=("Arial",15,"normal"))
 
 def Gagne():
     global gagnant
@@ -276,7 +278,6 @@ def Gagne():
     elif colonne1[3]*colonne2[2]*colonne3[1]*colonne4[0]==16 or colonne1[4]*colonne2[3]*colonne3[2]*colonne4[1]==16 or colonne2[3]*colonne3[2]*colonne4[1]*colonne5[0]==16 or colonne1[5]*colonne2[4]*colonne3[3]*colonne4[2]==16 or colonne2[4]*colonne3[3]*colonne4[2]*colonne5[1]==16 or colonne3[3]*colonne4[2]*colonne5[1]*colonne6[0]==16 or colonne2[5]*colonne3[4]*colonne4[3]*colonne5[2]==16 or colonne3[4]*colonne4[3]*colonne5[2]*colonne6[1]==16 or colonne4[3]*colonne5[2]*colonne6[1]*colonne7[0]==16 or colonne3[5]*colonne4[4]*colonne5[3]*colonne6[2]==16 or colonne4[4]*colonne5[3]*colonne6[2]*colonne7[1]==16 or colonne4[5]*colonne5[4]*colonne6[3]*colonne7[2]==16:
         gagnant=2
         return True
-
 
 mise_en_place()
 Grille_vide()
