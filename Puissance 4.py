@@ -75,7 +75,7 @@ def Coup_possible():
         if int(colonne)==1:
             if colonne1[0]!=0 and colonne1[1]!=0 and colonne1[2]!=0 and colonne1[3]!=0 and colonne1[4]!=0 and colonne1[5]!=0:
                 pion=False
-                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==49 or len(colonne)<1 or len(colonne)>2:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==49 or len(colonne)<1 or len(colonne)>1:
                     colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
                 if colonne=="exit":
                     return
@@ -91,7 +91,7 @@ def Coup_possible():
         if int(colonne)==2:
             if colonne2[0]!=0 and colonne2[1]!=0 and colonne2[2]!=0 and colonne2[3]!=0 and colonne2[4]!=0 and colonne2[5]!=0:
                 pion=False
-                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==50 or len(colonne)<1 or len(colonne)>2:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==50 or len(colonne)<1 or len(colonne)>1:
                     colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
                 if colonne=="exit":
                     return
@@ -107,7 +107,7 @@ def Coup_possible():
         if int(colonne)==3:
             if colonne3[0]!=0 and colonne3[1]!=0 and colonne3[2]!=0 and colonne3[3]!=0 and colonne3[4]!=0 and colonne3[5]!=0:
                 pion=False
-                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==51 or len(colonne)<1 or len(colonne)>2:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==51 or len(colonne)<1 or len(colonne)>1:
                     colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
                 if colonne=="exit":
                     return
@@ -123,7 +123,7 @@ def Coup_possible():
         if int(colonne)==4:
             if colonne4[0]!=0 and colonne4[1]!=0 and colonne4[2]!=0 and colonne4[3]!=0 and colonne4[4]!=0 and colonne4[5]!=0:
                 pion=False
-                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==52 or len(colonne)<1 or len(colonne)>2:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==52 or len(colonne)<1 or len(colonne)>1:
                     colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
                 if colonne=="exit":
                     return
@@ -139,7 +139,7 @@ def Coup_possible():
         if int(colonne)==5:
             if colonne5[0]!=0 and colonne5[1]!=0 and colonne5[2]!=0 and colonne5[3]!=0 and colonne5[4]!=0 and colonne5[5]!=0:
                 pion=False
-                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==53 or len(colonne)<1 or len(colonne)>2:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==53 or len(colonne)<1 or len(colonne)>1:
                     colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
                 if colonne=="exit":
                     return
@@ -155,7 +155,7 @@ def Coup_possible():
         if int(colonne)==6:
             if colonne6[0]!=0 and colonne6[1]!=0 and colonne6[2]!=0 and colonne6[3]!=0 and colonne6[4]!=0 and colonne6[5]!=0:
                 pion=False
-                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==54 or len(colonne)<1 or len(colonne)>2:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==54 or len(colonne)<1 or len(colonne)>1:
                     colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
                 if colonne=="exit":
                     return
@@ -171,7 +171,7 @@ def Coup_possible():
         if int(colonne)==7:
             if colonne7[0]!=0 and colonne7[1]!=0 and colonne7[2]!=0 and colonne7[3]!=0 and colonne7[4]!=0 and colonne7[5]!=0:
                 pion=False
-                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==55 or len(colonne)<1 or len(colonne)>2:
+                while ord(colonne)<49 or ord(colonne)>55 or ord(colonne)==55 or len(colonne)<1 or len(colonne)>1:
                     colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
                 if colonne=="exit":
                     return
