@@ -16,7 +16,6 @@ colonne5=[0,0,0,0,0,0]
 colonne6=[0,0,0,0,0,0]
 colonne7=[0,0,0,0,0,0]
 n=1
-p=0
 gagnant=0
 horizontale=False
 verticale=False
