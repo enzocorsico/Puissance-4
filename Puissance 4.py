@@ -1,4 +1,4 @@
-from turtle import*
+import turtle as trt
 colonnex=[-150,-100,-50,0,50,100,150]
 ligney=[-175,-125,-75,-25,25,75]
 chiffre=-155
@@ -24,51 +24,48 @@ diagonale=False
 
 def mise_en_place():
     global chiffre,chiffre2
-    up()
-    getscreen()
-    speed(20)
-    ht()
+    trt.up()
+    trt.getscreen()
+    trt.speed(20)
+    trt.ht()
     for j in range(7):
-        goto(chiffre,125)
-        write(chiffre2[j],font=("Arial",15,"normal"))
+        trt.goto(chiffre,125)
+        trt.write(chiffre2[j],font=("Arial",15,"normal"))
         chiffre=chiffre+50
     joueur[0]
 
-
 def Grille_vide():
-    tracer(False)
+    trt.tracer(False)
     grille_x=-175
     grille_y=-175
-    up()
-    color("black")
+    trt.up()
+    trt.color("black")
     for a in range(7):
-        up()
-        goto(grille_x,grille_y)
-        down()
-        forward(350)
+        trt.up()
+        trt.goto(grille_x,grille_y)
+        trt.down()
+        trt.forward(350)
         grille_y=grille_y+50
-        up()
-    right(90)
+        trt.up()
+    trt.right(90)
     grille_y=grille_y-50
     for b in range(8):
-        up()
-        goto(grille_x,grille_y)
-        down()
-        forward(300)
+        trt.up()
+        trt.goto(grille_x,grille_y)
+        trt.down()
+        trt.forward(300)
         grille_x=grille_x+50
-        up()
-    left(90)
-
-
+        trt.up()
+    trt.left(90)
 
 def Coup_possible():
     global colonne,n,pion,ligne,partie
-    colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne")
+    colonne=trt.textinput("Joueur "+str(joueur[n]),"Saisissez une colonne")
     if colonne=="exit":
         return
         
     while len(colonne)<1 or len(colonne)>1 or len(colonne)==0 or ord(colonne)<49 or ord(colonne)>55:
-        colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
+        colonne=trt.textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
             
     if int(colonne)==1:
         if colonne1[0]!=0 and colonne1[1]!=0 and colonne1[2]!=0 and colonne1[3]!=0 and colonne1[4]!=0 and colonne1[5]!=0:
@@ -168,22 +165,20 @@ def Coup_possible():
                 pion=True
                 return
 
-
-
 def cercle():
     global colonne,n
     if colonne=="exit":
         return
-    up()
-    color(couleur[n-1])
+    trt.up()
+    trt.color(couleur[n-1])
     while ord(colonne)<49 or ord(colonne)>55:
-        colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
-    goto(colonnex[int(colonne)-1],ligney[ligne-1])
-    down()
-    begin_fill()
-    circle(25,360)
-    end_fill()
-    up()
+        colonne=trt.textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
+    trt.goto(colonnex[int(colonne)-1],ligney[ligne-1])
+    trt.down()
+    trt.begin_fill()
+    trt.circle(25,360)
+    trt.end_fill()
+    trt.up()
 
 def tour():
     global n
@@ -199,8 +194,8 @@ def partie():
     while Gagne()!=True:
         if colonne=="exit":
             print("")
-            goto(-140,200)
-            write("Vous avez mis fin à la partie !",font=("Arial",15,"normal"))
+            trt.goto(-140,200)
+            trt.write("Vous avez mis fin à la partie !",font=("Arial",15,"normal"))
             return 
         print("C'est au tour du joueur",joueur[n],"de jouer !")
         Coup_possible()
@@ -210,11 +205,11 @@ def partie():
             Gagne()
         compteur=compteur+1
     print("")
-    goto(-250,200)
-    write("La partie est terminée, c'est le joueur "+str(gagnant)+" qui gagne la partie !",font=("Arial",15,"normal"))
+    trt.goto(-250,200)
+    trt.write("La partie est terminée, c'est le joueur "+str(gagnant)+" qui gagne la partie !",font=("Arial",15,"normal"))
     if tour==42:
-        goto(-100,200)
-        write("La partie est terminée",font=("Arial",15,"normal"))
+        trt.goto(-100,200)
+        trt.write("La partie est terminée",font=("Arial",15,"normal"))
     
 def Horiz():
     global horizontale,gagnant
@@ -286,4 +281,4 @@ def Gagne():
 mise_en_place()
 Grille_vide()
 partie()
-exitonclick()
+trt.exitonclick()
