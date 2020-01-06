@@ -32,9 +32,6 @@ def mise_en_place():
     joueur[0]
 
 
-
-
-
 def Grille_vide():
     tracer(False)
     grille_x=-175
@@ -63,119 +60,110 @@ def Grille_vide():
 
 def Coup_possible():
     global colonne,n,pion,ligne,partie
-    k=0
-    if p==1:
-        sys.exit(0)
-    elif p==0:
-        colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne")
-        if colonne=="exit":
-            return
-        while k!=2:
-            while len(colonne)<1 or len(colonne)>1:
-                colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
-            k=1
-            if k==1:
-                while ord(colonne)<49 or ord(colonne)>55:
-                    colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
-                k=2
+    colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne")
+    if colonne=="exit":
+        return
+        
+    while len(colonne)<1 or len(colonne)>1 or len(colonne)==0 or ord(colonne)<49 or ord(colonne)>55:
+        colonne=textinput("Joueur "+str(joueur[n]),"Saisissez une colonne valide")
             
-        if int(colonne)==1:
-            if colonne1[0]!=0 and colonne1[1]!=0 and colonne1[2]!=0 and colonne1[3]!=0 and colonne1[4]!=0 and colonne1[5]!=0:
+    if int(colonne)==1:
+        if colonne1[0]!=0 and colonne1[1]!=0 and colonne1[2]!=0 and colonne1[3]!=0 and colonne1[4]!=0 and colonne1[5]!=0:
+            pion=False
+            if colonne=="exit":
+                return
+        for d in range(len(colonne1)):
+            if colonne1[d]!=0:
                 pion=False
-                if colonne=="exit":
-                    return
-            for d in range(len(colonne1)):
-                if colonne1[d]!=0:
-                    pion=False
-                else:
-                    colonne1[d]=joueur[n]
-                    ligne=d+1
-                    pion=True
-                    return
+            else:
+                colonne1[d]=joueur[n]
+                ligne=d+1
+                pion=True
+                return
     
-        if int(colonne)==2:
-            if colonne2[0]!=0 and colonne2[1]!=0 and colonne2[2]!=0 and colonne2[3]!=0 and colonne2[4]!=0 and colonne2[5]!=0:
+    if int(colonne)==2:
+        if colonne2[0]!=0 and colonne2[1]!=0 and colonne2[2]!=0 and colonne2[3]!=0 and colonne2[4]!=0 and colonne2[5]!=0:
+            pion=False
+            if colonne=="exit":
+                return
+        for d in range(len(colonne2)):
+            if colonne2[d]!=0:
                 pion=False
-                if colonne=="exit":
-                    return
-            for d in range(len(colonne2)):
-                if colonne2[d]!=0:
-                    pion=False
-                else:
-                    colonne2[d]=joueur[n]
-                    ligne=d+1
-                    pion=True
-                    return
+            else:
+                colonne2[d]=joueur[n]
+                ligne=d+1
+                pion=True
+                return
     
-        if int(colonne)==3:
-            if colonne3[0]!=0 and colonne3[1]!=0 and colonne3[2]!=0 and colonne3[3]!=0 and colonne3[4]!=0 and colonne3[5]!=0:
+    if int(colonne)==3:
+        if colonne3[0]!=0 and colonne3[1]!=0 and colonne3[2]!=0 and colonne3[3]!=0 and colonne3[4]!=0 and colonne3[5]!=0:
+            pion=False
+            if colonne=="exit":
+                return
+        for d in range(len(colonne3)):
+            if colonne3[d]!=0:
                 pion=False
-                if colonne=="exit":
-                    return
-            for d in range(len(colonne3)):
-                if colonne3[d]!=0:
-                    pion=False
-                else:
-                    colonne3[d]=joueur[n]
-                    ligne=d+1
-                    pion=True
-                    return
+            else:
+                colonne3[d]=joueur[n]
+                ligne=d+1
+                pion=True
+                return
             
-        if int(colonne)==4:
-            if colonne4[0]!=0 and colonne4[1]!=0 and colonne4[2]!=0 and colonne4[3]!=0 and colonne4[4]!=0 and colonne4[5]!=0:
+    if int(colonne)==4:
+        if colonne4[0]!=0 and colonne4[1]!=0 and colonne4[2]!=0 and colonne4[3]!=0 and colonne4[4]!=0 and colonne4[5]!=0:
+            pion=False
+            if colonne=="exit":
+                return
+        for d in range(len(colonne4)):
+            if colonne4[d]!=0:
                 pion=False
-                if colonne=="exit":
-                    return
-            for d in range(len(colonne4)):
-                if colonne4[d]!=0:
-                    pion=False
-                else:
-                    colonne4[d]=joueur[n]
-                    ligne=d+1
-                    pion=True
-                    return
+            else:
+                colonne4[d]=joueur[n]
+                ligne=d+1
+                pion=True
+                return
     
-        if int(colonne)==5:
-            if colonne5[0]!=0 and colonne5[1]!=0 and colonne5[2]!=0 and colonne5[3]!=0 and colonne5[4]!=0 and colonne5[5]!=0:
+    if int(colonne)==5:
+        if colonne5[0]!=0 and colonne5[1]!=0 and colonne5[2]!=0 and colonne5[3]!=0 and colonne5[4]!=0 and colonne5[5]!=0:
+            pion=False
+            if colonne=="exit":
+                return
+        for d in range(len(colonne5)):
+            if colonne5[d]!=0:
                 pion=False
-                if colonne=="exit":
-                    return
-            for d in range(len(colonne5)):
-                if colonne5[d]!=0:
-                    pion=False
-                else:
-                    colonne5[d]=joueur[n]
-                    ligne=d+1
-                    pion=True
-                    return
+            else:
+                colonne5[d]=joueur[n]
+                ligne=d+1
+                pion=True
+                return
     
-        if int(colonne)==6:
-            if colonne6[0]!=0 and colonne6[1]!=0 and colonne6[2]!=0 and colonne6[3]!=0 and colonne6[4]!=0 and colonne6[5]!=0:
+    if int(colonne)==6:
+        if colonne6[0]!=0 and colonne6[1]!=0 and colonne6[2]!=0 and colonne6[3]!=0 and colonne6[4]!=0 and colonne6[5]!=0:
+            pion=False
+            if colonne=="exit":
+                return
+        for d in range(len(colonne6)):
+            if colonne6[d]!=0:
                 pion=False
-                if colonne=="exit":
-                    return
-            for d in range(len(colonne6)):
-                if colonne6[d]!=0:
-                    pion=False
-                else:
-                    colonne6[d]=joueur[n]
-                    ligne=d+1
-                    pion=True
-                    return
+            else:
+                colonne6[d]=joueur[n]
+                ligne=d+1
+                pion=True
+                return
             
-        if int(colonne)==7:
-            if colonne7[0]!=0 and colonne7[1]!=0 and colonne7[2]!=0 and colonne7[3]!=0 and colonne7[4]!=0 and colonne7[5]!=0:
+    if int(colonne)==7:
+        if colonne7[0]!=0 and colonne7[1]!=0 and colonne7[2]!=0 and colonne7[3]!=0 and colonne7[4]!=0 and colonne7[5]!=0:
+            pion=False
+            if colonne=="exit":
+                return
+        for d in range(len(colonne7)):
+            if colonne7[d]!=0:
                 pion=False
-                if colonne=="exit":
-                    return
-            for d in range(len(colonne7)):
-                if colonne7[d]!=0:
-                    pion=False
-                else:
-                    colonne7[d]=joueur[n]
-                    ligne=d+1
-                    pion=True
-                    return
+            else:
+                colonne7[d]=joueur[n]
+                ligne=d+1
+                pion=True
+                return
 
 
 
