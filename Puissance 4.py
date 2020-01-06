@@ -18,6 +18,9 @@ colonne7=[0,0,0,0,0,0]
 n=1
 p=0
 gagnant=0
+horizontale=False
+verticale=False
+diagonale=False
 
 def mise_en_place():
     global chiffre,chiffre2
@@ -212,53 +215,72 @@ def partie():
     if tour==42:
         goto(-100,200)
         write("La partie est terminée",font=("Arial",15,"normal"))
-
-def Gagne():
-    global gagnant
-    #Verticale
-    if colonne1[0]*colonne1[1]*colonne1[2]*colonne1[3]==1 or colonne1[1]*colonne1[2]*colonne1[3]*colonne1[4]==1 or colonne1[2]*colonne1[3]*colonne1[4]*colonne1[5]==1 or colonne2[0]*colonne2[1]*colonne2[2]*colonne2[3]==1 or colonne2[1]*colonne2[2]*colonne2[3]*colonne2[4]==1 or colonne2[2]*colonne2[3]*colonne2[4]*colonne2[5]==1 or colonne3[0]*colonne3[1]*colonne3[2]*colonne3[3]==1 or colonne3[1]*colonne3[2]*colonne3[3]*colonne3[4]==1 or colonne3[2]*colonne3[3]*colonne3[4]*colonne3[5]==1:
-        gagnant=1
-        return True
-    elif colonne1[0]*colonne1[1]*colonne1[2]*colonne1[3]==16 or colonne1[1]*colonne1[2]*colonne1[3]*colonne1[4]==16 or colonne1[2]*colonne1[3]*colonne1[4]*colonne1[5]==16 or colonne2[0]*colonne2[1]*colonne2[2]*colonne2[3]==16 or colonne2[1]*colonne2[2]*colonne2[3]*colonne2[4]==16 or colonne2[2]*colonne2[3]*colonne2[4]*colonne2[5]==16 or colonne3[0]*colonne3[1]*colonne3[2]*colonne3[3]==16 or colonne3[1]*colonne3[2]*colonne3[3]*colonne3[4]==16 or colonne3[2]*colonne3[3]*colonne3[4]*colonne3[5]==16:
-        gagnant=2
-        return True
     
-    elif colonne4[0]*colonne4[1]*colonne4[2]*colonne4[3]==1 or colonne4[1]*colonne4[2]*colonne4[3]*colonne4[4]==1 or colonne4[2]*colonne4[3]*colonne4[4]*colonne4[5]==1 or colonne5[0]*colonne5[1]*colonne5[2]*colonne5[3]==1 or colonne5[1]*colonne5[2]*colonne5[3]*colonne5[4]==1 or colonne5[2]*colonne5[3]*colonne5[4]*colonne5[5]==1 or colonne6[0]*colonne6[1]*colonne6[2]*colonne6[3]==1 or colonne6[1]*colonne6[2]*colonne6[3]*colonne6[4]==1 or colonne6[2]*colonne6[3]*colonne6[4]*colonne6[5]==1 or colonne7[0]*colonne7[1]*colonne7[2]*colonne7[3]==1 or colonne7[1]*colonne7[2]*colonne7[3]*colonne7[4]==1 or colonne7[2]*colonne7[3]*colonne7[4]*colonne7[5]==1:
+def Horiz():
+    global horizontale,gagnant
+    if colonne1[0]*colonne2[0]*colonne3[0]*colonne4[0]==1 or colonne2[0]*colonne3[0]*colonne4[0]*colonne5[0]==1 or colonne3[0]*colonne4[0]*colonne5[0]*colonne6[0]==1 or colonne4[0]*colonne5[0]*colonne6[0]*colonne7[0]==1 or colonne1[1]*colonne2[1]*colonne3[1]*colonne4[1]==1 or colonne2[1]*colonne3[1]*colonne4[1]*colonne5[1]==1 or colonne3[1]*colonne4[1]*colonne5[1]*colonne6[1]==1 or colonne4[1]*colonne5[1]*colonne6[1]*colonne7[1]==1 or colonne1[2]*colonne2[2]*colonne3[2]*colonne4[2]==1 or colonne2[2]*colonne3[2]*colonne4[2]*colonne5[2]==1 or colonne3[2]*colonne4[2]*colonne5[2]*colonne6[2]==1 or colonne4[2]*colonne5[2]*colonne6[2]*colonne7[2]==1 or colonne1[3]*colonne2[3]*colonne3[3]*colonne4[3]==1 or colonne2[3]*colonne3[3]*colonne4[3]*colonne5[3]==1 or colonne3[3]*colonne4[3]*colonne5[3]*colonne6[3]==1 or colonne4[3]*colonne5[3]*colonne6[3]*colonne7[3]==1:
         gagnant=1
-        return True
-    elif colonne4[0]*colonne4[1]*colonne4[2]*colonne4[3]==16 or colonne4[1]*colonne4[2]*colonne4[3]*colonne4[4]==16 or colonne4[2]*colonne4[3]*colonne4[4]*colonne4[5]==16 or colonne5[0]*colonne5[1]*colonne5[2]*colonne5[3]==16 or colonne5[1]*colonne5[2]*colonne5[3]*colonne5[4]==16 or colonne5[2]*colonne5[3]*colonne5[4]*colonne5[5]==16 or colonne6[0]*colonne6[1]*colonne6[2]*colonne6[3]==16 or colonne6[1]*colonne6[2]*colonne6[3]*colonne6[4]==16 or colonne6[2]*colonne6[3]*colonne6[4]*colonne6[5]==16 or colonne7[0]*colonne7[1]*colonne7[2]*colonne7[3]==16 or colonne7[1]*colonne7[2]*colonne7[3]*colonne7[4]==16 or colonne7[2]*colonne7[3]*colonne7[4]*colonne7[5]==16:
-        gagnant=2
-        return True
-    
-    #Horizontal
-    elif colonne1[0]*colonne2[0]*colonne3[0]*colonne4[0]==1 or colonne2[0]*colonne3[0]*colonne4[0]*colonne5[0]==1 or colonne3[0]*colonne4[0]*colonne5[0]*colonne6[0]==1 or colonne4[0]*colonne5[0]*colonne6[0]*colonne7[0]==1 or colonne1[1]*colonne2[1]*colonne3[1]*colonne4[1]==1 or colonne2[1]*colonne3[1]*colonne4[1]*colonne5[1]==1 or colonne3[1]*colonne4[1]*colonne5[1]*colonne6[1]==1 or colonne4[1]*colonne5[1]*colonne6[1]*colonne7[1]==1 or colonne1[2]*colonne2[2]*colonne3[2]*colonne4[2]==1 or colonne2[2]*colonne3[2]*colonne4[2]*colonne5[2]==1 or colonne3[2]*colonne4[2]*colonne5[2]*colonne6[2]==1 or colonne4[2]*colonne5[2]*colonne6[2]*colonne7[2]==1 or colonne1[3]*colonne2[3]*colonne3[3]*colonne4[3]==1 or colonne2[3]*colonne3[3]*colonne4[3]*colonne5[3]==1 or colonne3[3]*colonne4[3]*colonne5[3]*colonne6[3]==1 or colonne4[3]*colonne5[3]*colonne6[3]*colonne7[3]==1:
-        gagnant=1
+        horizontale=True
         return True
     elif colonne1[0]*colonne2[0]*colonne3[0]*colonne4[0]==16 or colonne2[0]*colonne3[0]*colonne4[0]*colonne5[0]==16 or colonne3[0]*colonne4[0]*colonne5[0]*colonne6[0]==16 or colonne4[0]*colonne5[0]*colonne6[0]*colonne7[0]==16 or colonne1[1]*colonne2[1]*colonne3[1]*colonne4[1]==16 or colonne2[1]*colonne3[1]*colonne4[1]*colonne5[1]==16 or colonne3[1]*colonne4[1]*colonne5[1]*colonne6[1]==16 or colonne4[1]*colonne5[1]*colonne6[1]*colonne7[1]==16 or colonne1[2]*colonne2[2]*colonne3[2]*colonne4[2]==16 or colonne2[2]*colonne3[2]*colonne4[2]*colonne5[2]==16 or colonne3[2]*colonne4[2]*colonne5[2]*colonne6[2]==16 or colonne4[2]*colonne5[2]*colonne6[2]*colonne7[2]==16 or colonne1[3]*colonne2[3]*colonne3[3]*colonne4[3]==16 or colonne2[3]*colonne3[3]*colonne4[3]*colonne5[3]==16 or colonne3[3]*colonne4[3]*colonne5[3]*colonne6[3]==16 or colonne4[3]*colonne5[3]*colonne6[3]*colonne7[3]==16:
         gagnant=2
+        horizontale=True
         return True
-    
     elif colonne1[4]*colonne2[4]*colonne3[4]*colonne4[4]==1 or colonne2[4]*colonne3[4]*colonne4[4]*colonne5[4]==1 or colonne3[4]*colonne4[4]*colonne5[4]*colonne6[4]==1 or colonne4[4]*colonne5[4]*colonne6[4]*colonne7[4]==1 or colonne1[5]*colonne2[5]*colonne3[5]*colonne4[5]==1 or colonne2[5]*colonne3[5]*colonne4[5]*colonne5[5]==1 or colonne3[5]*colonne4[5]*colonne5[5]*colonne6[5]==1 or colonne4[5]*colonne5[5]*colonne6[5]*colonne7[5]==1:
         gagnant=1
+        horizontale=True
         return True
     elif colonne1[4]*colonne2[4]*colonne3[4]*colonne4[4]==16 or colonne2[4]*colonne3[4]*colonne4[4]*colonne5[4]==16 or colonne3[4]*colonne4[4]*colonne5[4]*colonne6[4]==16 or colonne4[4]*colonne5[4]*colonne6[4]*colonne7[4]==16 or colonne1[5]*colonne2[5]*colonne3[5]*colonne4[5]==16 or colonne2[5]*colonne3[5]*colonne4[5]*colonne5[5]==16 or colonne3[5]*colonne4[5]*colonne5[5]*colonne6[5]==16 or colonne4[5]*colonne5[5]*colonne6[5]*colonne7[5]==16:
         gagnant=2
+        horizontale=True
         return True
-    
-    #Diagonales Montantes
-    elif colonne1[2]*colonne2[3]*colonne3[4]*colonne4[5]==1 or colonne1[1]*colonne2[2]*colonne3[3]*colonne4[4]==1 or colonne2[2]*colonne3[3]*colonne4[4]*colonne5[5]==1 or colonne1[0]*colonne2[1]*colonne3[2]*colonne4[3]==1 or colonne2[1]*colonne3[2]*colonne4[3]*colonne5[4]==1 or colonne3[2]*colonne4[3]*colonne5[4]*colonne6[5]==1 or colonne2[0]*colonne3[1]*colonne4[2]*colonne5[3]==1 or colonne3[1]*colonne4[2]*colonne5[3]*colonne6[4]==1 or colonne4[2]*colonne5[3]*colonne6[4]*colonne7[5]==1 or colonne3[0]*colonne4[1]*colonne5[2]*colonne6[3]==1 or colonne4[1]*colonne5[2]*colonne6[3]*colonne7[4]==1 or colonne4[0]*colonne5[1]*colonne6[2]*colonne7[3]==1:
+
+def Verti():
+    global verticale,gagnant
+    if colonne1[0]*colonne1[1]*colonne1[2]*colonne1[3]==1 or colonne1[1]*colonne1[2]*colonne1[3]*colonne1[4]==1 or colonne1[2]*colonne1[3]*colonne1[4]*colonne1[5]==1 or colonne2[0]*colonne2[1]*colonne2[2]*colonne2[3]==1 or colonne2[1]*colonne2[2]*colonne2[3]*colonne2[4]==1 or colonne2[2]*colonne2[3]*colonne2[4]*colonne2[5]==1 or colonne3[0]*colonne3[1]*colonne3[2]*colonne3[3]==1 or colonne3[1]*colonne3[2]*colonne3[3]*colonne3[4]==1 or colonne3[2]*colonne3[3]*colonne3[4]*colonne3[5]==1:
         gagnant=1
+        verticale=True
+        return True
+    elif colonne1[0]*colonne1[1]*colonne1[2]*colonne1[3]==16 or colonne1[1]*colonne1[2]*colonne1[3]*colonne1[4]==16 or colonne1[2]*colonne1[3]*colonne1[4]*colonne1[5]==16 or colonne2[0]*colonne2[1]*colonne2[2]*colonne2[3]==16 or colonne2[1]*colonne2[2]*colonne2[3]*colonne2[4]==16 or colonne2[2]*colonne2[3]*colonne2[4]*colonne2[5]==16 or colonne3[0]*colonne3[1]*colonne3[2]*colonne3[3]==16 or colonne3[1]*colonne3[2]*colonne3[3]*colonne3[4]==16 or colonne3[2]*colonne3[3]*colonne3[4]*colonne3[5]==16:
+        gagnant=2
+        verticale=True
+        return True
+    elif colonne4[0]*colonne4[1]*colonne4[2]*colonne4[3]==1 or colonne4[1]*colonne4[2]*colonne4[3]*colonne4[4]==1 or colonne4[2]*colonne4[3]*colonne4[4]*colonne4[5]==1 or colonne5[0]*colonne5[1]*colonne5[2]*colonne5[3]==1 or colonne5[1]*colonne5[2]*colonne5[3]*colonne5[4]==1 or colonne5[2]*colonne5[3]*colonne5[4]*colonne5[5]==1 or colonne6[0]*colonne6[1]*colonne6[2]*colonne6[3]==1 or colonne6[1]*colonne6[2]*colonne6[3]*colonne6[4]==1 or colonne6[2]*colonne6[3]*colonne6[4]*colonne6[5]==1 or colonne7[0]*colonne7[1]*colonne7[2]*colonne7[3]==1 or colonne7[1]*colonne7[2]*colonne7[3]*colonne7[4]==1 or colonne7[2]*colonne7[3]*colonne7[4]*colonne7[5]==1:
+        gagnant=1
+        verticale=True
+        return True
+    elif colonne4[0]*colonne4[1]*colonne4[2]*colonne4[3]==16 or colonne4[1]*colonne4[2]*colonne4[3]*colonne4[4]==16 or colonne4[2]*colonne4[3]*colonne4[4]*colonne4[5]==16 or colonne5[0]*colonne5[1]*colonne5[2]*colonne5[3]==16 or colonne5[1]*colonne5[2]*colonne5[3]*colonne5[4]==16 or colonne5[2]*colonne5[3]*colonne5[4]*colonne5[5]==16 or colonne6[0]*colonne6[1]*colonne6[2]*colonne6[3]==16 or colonne6[1]*colonne6[2]*colonne6[3]*colonne6[4]==16 or colonne6[2]*colonne6[3]*colonne6[4]*colonne6[5]==16 or colonne7[0]*colonne7[1]*colonne7[2]*colonne7[3]==16 or colonne7[1]*colonne7[2]*colonne7[3]*colonne7[4]==16 or colonne7[2]*colonne7[3]*colonne7[4]*colonne7[5]==16:
+        gagnant=2
+        verticale=True
+        return True
+
+def Diago():
+    global diagonale,gagnant
+    #Diagonales Montantes
+    if colonne1[2]*colonne2[3]*colonne3[4]*colonne4[5]==1 or colonne1[1]*colonne2[2]*colonne3[3]*colonne4[4]==1 or colonne2[2]*colonne3[3]*colonne4[4]*colonne5[5]==1 or colonne1[0]*colonne2[1]*colonne3[2]*colonne4[3]==1 or colonne2[1]*colonne3[2]*colonne4[3]*colonne5[4]==1 or colonne3[2]*colonne4[3]*colonne5[4]*colonne6[5]==1 or colonne2[0]*colonne3[1]*colonne4[2]*colonne5[3]==1 or colonne3[1]*colonne4[2]*colonne5[3]*colonne6[4]==1 or colonne4[2]*colonne5[3]*colonne6[4]*colonne7[5]==1 or colonne3[0]*colonne4[1]*colonne5[2]*colonne6[3]==1 or colonne4[1]*colonne5[2]*colonne6[3]*colonne7[4]==1 or colonne4[0]*colonne5[1]*colonne6[2]*colonne7[3]==1:
+        gagnant=1
+        diagonale=True
         return True
     elif colonne1[2]*colonne2[3]*colonne3[4]*colonne4[5]==16 or colonne1[1]*colonne2[2]*colonne3[3]*colonne4[4]==16 or colonne2[2]*colonne3[3]*colonne4[4]*colonne5[5]==16 or colonne1[0]*colonne2[1]*colonne3[2]*colonne4[3]==16 or colonne2[1]*colonne3[2]*colonne4[3]*colonne5[4]==16 or colonne3[2]*colonne4[3]*colonne5[4]*colonne6[5]==16 or colonne2[0]*colonne3[1]*colonne4[2]*colonne5[3]==16 or colonne3[1]*colonne4[2]*colonne5[3]*colonne6[4]==16 or colonne4[2]*colonne5[3]*colonne6[4]*colonne7[5]==16 or colonne3[0]*colonne4[1]*colonne5[2]*colonne6[3]==16 or colonne4[1]*colonne5[2]*colonne6[3]*colonne7[4]==16 or colonne4[0]*colonne5[1]*colonne6[2]*colonne7[3]==16:
         gagnant=2
+        diagonale=True
         return True
-    
     #Diagonales Descendantes
     elif colonne1[3]*colonne2[2]*colonne3[1]*colonne4[0]==1 or colonne1[4]*colonne2[3]*colonne3[2]*colonne4[1]==1 or colonne2[3]*colonne3[2]*colonne4[1]*colonne5[0]==1 or colonne1[5]*colonne2[4]*colonne3[3]*colonne4[2]==1 or colonne2[4]*colonne3[3]*colonne4[2]*colonne5[1]==1 or colonne3[3]*colonne4[2]*colonne5[1]*colonne6[0]==1 or colonne2[5]*colonne3[4]*colonne4[3]*colonne5[2]==1 or colonne3[4]*colonne4[3]*colonne5[2]*colonne6[1]==1 or colonne4[3]*colonne5[2]*colonne6[1]*colonne7[0]==1 or colonne3[5]*colonne4[4]*colonne5[3]*colonne6[2]==1 or colonne4[4]*colonne5[3]*colonne6[2]*colonne7[1]==1 or colonne4[5]*colonne5[4]*colonne6[3]*colonne7[2]==1:
         gagnant=1
+        diagonale=True
         return True
     elif colonne1[3]*colonne2[2]*colonne3[1]*colonne4[0]==16 or colonne1[4]*colonne2[3]*colonne3[2]*colonne4[1]==16 or colonne2[3]*colonne3[2]*colonne4[1]*colonne5[0]==16 or colonne1[5]*colonne2[4]*colonne3[3]*colonne4[2]==16 or colonne2[4]*colonne3[3]*colonne4[2]*colonne5[1]==16 or colonne3[3]*colonne4[2]*colonne5[1]*colonne6[0]==16 or colonne2[5]*colonne3[4]*colonne4[3]*colonne5[2]==16 or colonne3[4]*colonne4[3]*colonne5[2]*colonne6[1]==16 or colonne4[3]*colonne5[2]*colonne6[1]*colonne7[0]==16 or colonne3[5]*colonne4[4]*colonne5[3]*colonne6[2]==16 or colonne4[4]*colonne5[3]*colonne6[2]*colonne7[1]==16 or colonne4[5]*colonne5[4]*colonne6[3]*colonne7[2]==16:
         gagnant=2
+        diagonale=True
+        return True
+
+def Gagne():
+    if Horiz()==True:
+        return True
+    if Verti()==True:
+        return True
+    if Diago()==True:
         return True
 
 mise_en_place()
