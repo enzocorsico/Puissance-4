@@ -1,12 +1,12 @@
 import turtle as trt
 colonnex=[-150,-100,-50,0,50,100,150]
-ligney=[-175,-125,-75,-25,25,75]
+ligney=[-150,-100,-50,0,50,100]
 chiffre=-155
 chiffre2=["1","2","3","4","5","6","7"]
 colonne=""
 ligne=0
 joueur=[0,1,2] #Le 0 ne correspond à aucun joueur
-couleur=["red","blue"]
+couleur=["red","yellow"]
 pion=False
 colonne1=[0,0,0,0,0,0]
 colonne2=[0,0,0,0,0,0]
@@ -24,8 +24,10 @@ diagonale=False
 def mise_en_place():
     global chiffre,chiffre2
     trt.up()
+    trt.setup(450,450)
+    trt.bgpic("Grille.png")
+    trt.title("Puissance 4")
     trt.getscreen()
-    trt.speed(20)
     trt.ht()
     for j in range(7):
         trt.goto(chiffre,125)
@@ -36,7 +38,7 @@ def mise_en_place():
 def Grille_vide():
     trt.tracer(False)
     grille_x=-175
-    grille_y=-175
+    grille_y=-148
     trt.up()
     trt.color("black")
     for a in range(7):
@@ -175,7 +177,7 @@ def cercle():
     trt.goto(colonnex[int(colonne)-1],ligney[ligne-1])
     trt.down()
     trt.begin_fill()
-    trt.circle(25,360)
+    trt.circle(23,360)
     trt.end_fill()
     trt.up()
 
