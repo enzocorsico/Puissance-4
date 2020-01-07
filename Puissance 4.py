@@ -6,7 +6,7 @@ chiffre2=["1","2","3","4","5","6","7"]
 colonne=""
 ligne=0
 joueur=[0,1,2] #Le 0 ne correspond à aucun joueur
-couleur=["red","yellow"]
+couleur=["red","green"]
 pion=False
 colonne1=[0,0,0,0,0,0]
 colonne2=[0,0,0,0,0,0]
@@ -30,7 +30,7 @@ def mise_en_place():
     trt.getscreen()
     trt.ht()
     for j in range(7):
-        trt.goto(chiffre,125)
+        trt.goto(chiffre,150)
         trt.write(chiffre2[j],font=("Arial",15,"normal"))
         chiffre=chiffre+50
     joueur[0]
@@ -206,8 +206,8 @@ def partie():
             Gagne()
         compteur=compteur+1
     print("")
-    trt.goto(-250,200)
-    trt.write("La partie est terminée, c'est le joueur "+str(gagnant)+" qui gagne la partie !",font=("Arial",15,"normal"))
+    trt.goto(-210,200)
+    trt.write("La partie est terminée, c'est le joueur "+str(gagnant)+" qui gagne la partie !",font=("Arial",13,"normal"))
     if tour==42:
         trt.goto(-100,200)
         trt.write("La partie est terminée",font=("Arial",15,"normal"))
