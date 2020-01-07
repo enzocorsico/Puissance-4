@@ -27,6 +27,7 @@ def mise_en_place():
     trt.setup(450,450)
     trt.bgpic("Grille.png")
     trt.title("Puissance 4")
+    trt.speed(26)
     trt.getscreen()
     trt.ht()
     for j in range(7):
