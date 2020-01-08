@@ -25,7 +25,6 @@ def mise_en_place():
     global chiffre,chiffre2
     trt.up()
     trt.setup(450,450)
-    trt.bgpic("Grille.png")
     trt.title("Puissance 4")
     trt.speed(26)
     trt.getscreen()
@@ -178,7 +177,7 @@ def cercle():
     trt.goto(colonnex[int(colonne)-1],ligney[ligne-1])
     trt.down()
     trt.begin_fill()
-    trt.circle(23,360)
+    trt.circle(25,360)
     trt.end_fill()
     trt.up()
 
